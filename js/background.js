@@ -1,6 +1,6 @@
  function updateTab(request, sender, sendResponse) {
 
-    browser.tabs.query({currentWindow: true, active: true}).then((tabs) => {
+    browser.tabs.query({url: "*://*.deezer.com/*"}).then((tabs) => {
         let tab = tabs[0];
         console.log(tab.mutedInfo.muted);
         console.log(!tab.mutedInfo.muted);
