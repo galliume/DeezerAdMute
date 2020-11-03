@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "DeezerAdMute",
+    "version": "1.0",
+  
+    "description": "Mute firefox if an add is playing on deezer",
+  
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "{2600bd21-cbe6-4921-a7e8-5d93cd21b4df}",
+        "strict_min_version": "48.0"
+      }
+    },
+    
+    "icons": {
+      "48": "icons/rebelle.png"
+    },
+  
+    "background": {
+      "scripts": [
+          "js/background.js"
+      ]
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["*://*.deezer.com/*"],
+        "js": ["js/deezeradmute.js"],
+        "run_at": "document_end"
+      }
+    ],  	
+
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ]
+  }
